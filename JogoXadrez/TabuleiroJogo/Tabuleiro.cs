@@ -39,6 +39,16 @@ namespace JogoXadrez.TabuleiroJogo
             return ObterPeca(posicao) != null;
         }
 
+        public Peca RetirarPeca(Posicao posicao)
+        {
+            if (ObterPeca(posicao) == null)
+                return null;
+            Peca aux = ObterPeca(posicao);
+            aux.Posicao = null;
+            _pecas[posicao.Linha, posicao.Coluna] = null;
+            return aux;
+        }
+
 
         public bool PosicaoEValida(Posicao posicao)
         {
