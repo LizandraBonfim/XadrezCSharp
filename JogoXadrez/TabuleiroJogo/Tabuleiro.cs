@@ -17,5 +17,42 @@ namespace JogoXadrez.TabuleiroJogo
         {
             return _pecas[linha, coluna];
         }
+
+        public Peca ObterPeca(Posicao posicao)
+        {
+            //return ObterPeca(posicao.Linha, posicao.Coluna);
+            return _pecas[posicao.Linha, posicao.Coluna];
+        }
+
+        public void ColocarPeca(Peca peca, Posicao posicao)
+        {
+            if(PecaExiste(posicao))
+                throw  new TabuleiroException("Ja existe uma peça nessa posição");
+            
+            _pecas[posicao.Linha, posicao.Coluna] = peca;
+            peca.Posicao = posicao;
+        }
+
+        public bool PecaExiste(Posicao posicao)
+        {
+            PosicaoEValida(posicao);
+            return ObterPeca(posicao) != null;
+        }
+
+
+        public bool PosicaoEValida(Posicao posicao)
+        {
+            var linhaInvalida = posicao.Linha < 0 || posicao.Linha >= Linhas;
+            var colunaInvalida = posicao.Coluna < 0 || posicao.Coluna >= Colunas;
+            
+            if (linhaInvalida || colunaInvalida) return false;
+            return true;
+        }
+
+        public void ValidaPosicao(Posicao posicao)
+        {
+            if(!PosicaoEValida(posicao))
+                throw new TabuleiroException("Posição inválida");
+        }
     }
 }
