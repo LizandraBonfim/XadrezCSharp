@@ -1,4 +1,4 @@
-namespace JogoXadrez.Tabuleiro
+namespace JogoXadrez.TabuleiroJogo
 {
     public class Tabuleiro
     {
@@ -11,6 +11,11 @@ namespace JogoXadrez.Tabuleiro
             Linhas = linhas;
             Colunas = colunas;
             this._pecas = new Peca[linhas, colunas];
+        }
+
+        public Peca ObterPeca(int linha, int coluna)
+        {
+            return _pecas[linha, coluna];
         }
     }
 }
