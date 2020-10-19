@@ -12,5 +12,11 @@ namespace JogoXadrez.XadrezJogo
         {
             return "C";
         }
+
+
+        public override bool[,] MovimentoPossivel()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -1,7 +1,7 @@
 
 namespace JogoXadrez.TabuleiroJogo
 {
-    public class Peca
+    public abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; }
@@ -15,6 +15,36 @@ namespace JogoXadrez.TabuleiroJogo
             this.Tab = tab;
             
         }
+
+        public void IncrementarQtdMovimentos()
+        {
+            QtdMovimentos++;
+        }
         
+        public void DecrementarQtdMovimentos()
+        {
+            QtdMovimentos--;
+        }
+
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovimentoPossivel();
+            for (int linhas = 0; linhas < Tab.Linhas; linhas++)
+            {
+                for (int colunas = 0; colunas < Tab.Colunas; colunas++)
+                {
+                    if (mat[linhas, colunas])
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool PodeMoverPara(Posicao posicao)
+        {
+            return MovimentoPossivel()[posicao.Linha, posicao.Coluna];
+        }
+        public abstract bool[,] MovimentoPossivel();
     }
 }

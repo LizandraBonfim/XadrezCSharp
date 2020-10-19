@@ -20,6 +20,7 @@ namespace JogoXadrez.TabuleiroJogo
 
         public Peca ObterPeca(Posicao posicao)
         {
+            
             //return ObterPeca(posicao.Linha, posicao.Coluna);
             return _pecas[posicao.Linha, posicao.Coluna];
         }
