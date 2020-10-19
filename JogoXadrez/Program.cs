@@ -26,7 +26,7 @@ namespace JogoXadrez
 
                         partida.ValidarPosicaoDeOrigem(origem);
 
-                        bool[,] posicoesPossiveis = partida.tabuleiro.ObterPeca(origem).MovimentoPossivel();
+                        bool[,] posicoesPossiveis = partida.tabuleiro.ObterPeca(origem).MovimentosPossiveis();
 
                         Console.Clear();
                         Tela.ImprimirTabuleiro(partida.tabuleiro, posicoesPossiveis);

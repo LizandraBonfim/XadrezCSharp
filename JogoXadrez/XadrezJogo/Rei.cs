@@ -19,7 +19,7 @@ namespace JogoXadrez.XadrezJogo
             return peca == null || peca.Cor != this.Cor;
         }
 
-        public override bool[,] MovimentoPossivel()
+        public override bool[,] MovimentosPossiveis()
         {
             bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
             

@@ -28,7 +28,7 @@ namespace JogoXadrez.TabuleiroJogo
 
         public bool ExisteMovimentosPossiveis()
         {
-            bool[,] mat = MovimentoPossivel();
+            bool[,] mat = MovimentosPossiveis();
             for (int linhas = 0; linhas < Tab.Linhas; linhas++)
             {
                 for (int colunas = 0; colunas < Tab.Colunas; colunas++)
@@ -41,10 +41,10 @@ namespace JogoXadrez.TabuleiroJogo
             return false;
         }
 
-        public bool PodeMoverPara(Posicao posicao)
+        public bool MovimentoPossivel(Posicao posicao)
         {
-            return MovimentoPossivel()[posicao.Linha, posicao.Coluna];
+            return MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
         }
-        public abstract bool[,] MovimentoPossivel();
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
