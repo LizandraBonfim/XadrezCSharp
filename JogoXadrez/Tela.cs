@@ -90,8 +90,7 @@ namespace JogoXadrez
                         Console.BackgroundColor = fundoOriginal;
 
 
-                    var peca = tabuleiro.ObterPeca(linha, coluna);
-                    ImprimirPeca(peca);
+                    ImprimirPeca(tabuleiro.ObterPeca(linha, coluna));
                 }
 
                 Console.WriteLine();

@@ -35,7 +35,7 @@ namespace JogoXadrez.XadrezJogo
                 if (Tab.ObterPeca(posicaoZerada) != null && Tab.ObterPeca(posicaoZerada).Cor != Cor)
                     break;
 
-                posicaoZerada.DefinirValores(Posicao.Linha - 1, Posicao.Coluna -1 );
+                posicaoZerada.DefinirValores(posicaoZerada.Linha - 1, posicaoZerada.Coluna -1 );
 
                 // posicaoZerada.Linha = posicaoZerada.Linha - 1;
             }
@@ -51,7 +51,7 @@ namespace JogoXadrez.XadrezJogo
                 if (Tab.ObterPeca(posicaoZerada) != null && Tab.ObterPeca(posicaoZerada).Cor != this.Cor)
                     break;
 
-                posicaoZerada.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+                posicaoZerada.DefinirValores(posicaoZerada.Linha - 1, posicaoZerada.Coluna + 1);
 
                 // posicaoZerada.Linha = posicaoZerada.Linha + 1;
             }
@@ -66,7 +66,7 @@ namespace JogoXadrez.XadrezJogo
                 if (Tab.ObterPeca(posicaoZerada) != null && Tab.ObterPeca(posicaoZerada).Cor != this.Cor)
                     break;
 
-                posicaoZerada.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+                posicaoZerada.DefinirValores(posicaoZerada.Linha + 1, posicaoZerada.Coluna + 1);
 
                 // posicaoZerada.Coluna = posicaoZerada.Coluna + 1;
             }
@@ -81,14 +81,11 @@ namespace JogoXadrez.XadrezJogo
                 if (Tab.ObterPeca(posicaoZerada) != null && Tab.ObterPeca(posicaoZerada).Cor != this.Cor)
                     break;
 
-                posicaoZerada.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+                posicaoZerada.DefinirValores(posicaoZerada.Linha + 1, posicaoZerada.Coluna - 1);
 
                 // posicaoZerada.Coluna = posicaoZerada.Coluna - 1;
             }
-
-                
-
-
+            
             return mat;
         }
     }
